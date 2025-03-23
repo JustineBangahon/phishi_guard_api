@@ -12,7 +12,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.metrics import classification_report
 import joblib
 import numpy as np
-import random
 import os
 
 # Download NLTK resources
