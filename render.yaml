@@ -1,12 +1,9 @@
 services:
-  # API service
   - type: web
     name: phishguard-api
-    env: python
-    buildCommand: pip install -r requirements.txt && python -c "import nltk; nltk.download('stopwords')"
-    startCommand: gunicorn wsgi:app
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.app:app
     envVars:
-      - key: ENVIRONMENT
-        value: production
-    healthCheckPath: /health
-    autoDeploy: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
